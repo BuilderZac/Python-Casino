@@ -23,10 +23,9 @@ SaveData = open(sys.path[0] + r"\SaveData.txt" , "r")
 
 wincon = SaveData.readline()[:7]
 
-if user == 'aldwin':
-    AP = True
-    if AP == False:
-        sys.exit()
+
+AP = False
+if AP == True & user == 'aldwin':
     userEdit = False
     try:
         while True:
@@ -118,7 +117,9 @@ while True:
                 game = ''
                 break
             elif game == '2':
-                print('Blackjack coming soon')
+                CasinoUtils.clear()
+                Blackjack.BlackJack(user,UserData,user_len,wincon)
+                game = ''
                 break
             else:
                 print('Invalid input')

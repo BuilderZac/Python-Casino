@@ -1,5 +1,5 @@
-import os
 import CasinoUtils
+import random
 from time import sleep
 
 def BlackJack(user,UserData,user_len,wincon):
