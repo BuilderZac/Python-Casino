@@ -1,19 +1,17 @@
 from time import sleep
 import Slots
 import Blackjack
+import CasinoUtils
 import os
 import sys
 
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
 
 #user management
-clear()
+CasinoUtils.clear()
 print('Welcome to the Deamon Casino!')
 print('Dont worry the only thing you will loose here is time and proccessor power.')
 user = input('Enter your Username:')
-clear()
+CasinoUtils.clear()
 user_len = len(user)
 
 if not os.path.exists(sys.path[0] + r"\SaveData.txt"):
@@ -32,7 +30,7 @@ if user == 'aldwin':
     userEdit = False
     try:
         while True:
-            clear()
+            CasinoUtils.clear()
             print('Admin mode options:')
             print('1. Modify win condition')
             print('2. Edit profile')
@@ -115,7 +113,7 @@ while True:
         while True:
             game = input()
             if game == '1':
-                clear()
+                CasinoUtils.clear()
                 Slots.Slots(user,UserData,user_len,wincon)
                 game = ''
                 break
@@ -126,6 +124,6 @@ while True:
                 print('Invalid input')
                 continue
     except KeyboardInterrupt:
-        clear()
+        CasinoUtils.clear()
         print('Thank you for playing')
         sys.exit()
