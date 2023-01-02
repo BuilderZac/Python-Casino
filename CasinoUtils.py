@@ -2,9 +2,11 @@ import os
 import sys
 import random
 
+#Config host settings here
 AdminMode = False
 DataLocation = sys.path[0] + r"\SaveData.txt"
 TmpLocation = sys.path[0] + r"\SaveDataTmp.txt"
+#-----------------------------------------------
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')

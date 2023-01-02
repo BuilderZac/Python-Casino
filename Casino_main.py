@@ -1,9 +1,8 @@
 from time import sleep
-import Slots
-import Blackjack
 import CasinoUtils
-import os
 import sys
+import os
+import GameCatalog
 
 
 #user management
@@ -105,24 +104,10 @@ else:
             break
 while True:
     try:
-        print('Please select which game you want to play:')
-        print('1. Slots')
-        print('2. Blackjack')
-        while True:
-            game = input()
-            if game == '1':
-                CasinoUtils.clear()
-                Slots.Slots(user,UserData,user_len,wincon)
-                game = ''
-                break
-            elif game == '2':
-                CasinoUtils.clear()
-                Blackjack.BlackJack(user,UserData,user_len,wincon)
-                game = ''
-                break
-            else:
-                print('Invalid input')
-                continue
+        GameCatalog.GameList()
+        selection = input()
+        GameCatalog.LaunchGame(selection,user,UserData,user_len,wincon)
+
     except KeyboardInterrupt:
         CasinoUtils.clear()
         print('Thank you for playing')
