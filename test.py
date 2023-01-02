@@ -1,7 +1,7 @@
-import Cards
 import time
+import CasinoUtils
 
-test = Cards.deck()
+test = CasinoUtils.GenDeck()
 time.sleep(2)
-for i in range(40):
-    print(test.printCard() , " ", i)
+for i in range(52):
+    print(test[i] , " ", i)
