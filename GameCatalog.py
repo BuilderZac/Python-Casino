@@ -1,5 +1,5 @@
 import CasinoUtils
-import time
+from time import sleep
 
 #import game modules here
 import Blackjack
@@ -27,6 +27,6 @@ def LaunchGame(selection,user,UserData,user_len,wincon):
 
     else: #Dont touch this else statment
         print('Invalid input')
-        time.sleep(2)
+        sleep(2)
         CasinoUtils.clear()
         game=''
