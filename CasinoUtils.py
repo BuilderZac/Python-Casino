@@ -2,12 +2,16 @@ import os
 import sys
 import random
 
+AdminMode = False
+DataLocation = sys.path[0] + r"\SaveData.txt"
+TmpLocation = sys.path[0] + r"\SaveDataTmp.txt"
+
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def save(user_len,user,Balance,wincon):
-    SaveData = open(sys.path[0] + r"\SaveData.txt" , "r")
-    SaveData_temp = open(sys.path[0] + r"\SaveData_temp.txt" , "w")
+    SaveData = open(DataLocation,"r")
+    SaveData_temp = open(TmpLocation, "w")
     wincon = int(wincon)
     wincon = str(abs(wincon))
     SaveData_temp.write(wincon + '\n')
@@ -24,13 +28,13 @@ def save(user_len,user,Balance,wincon):
     SaveData_temp.close()
     SaveData.close()
 
-    SaveData_temp = open(sys.path[0] + r"\SaveData_temp.txt" , "r")
-    SaveData = open(sys.path[0] + r"\SaveData.txt" , "w")
+    SaveData_temp = open(TmpLocation, "r")
+    SaveData = open(DataLocation, "w")
     for i in SaveData_temp:
         SaveData.write(i)
     SaveData_temp.close()
     SaveData.close()
-    os.remove(sys.path[0] + r"\SaveData_temp.txt")
+    os.remove(TmpLocation)
 
 def GenDeck():
     storedDeck = []
