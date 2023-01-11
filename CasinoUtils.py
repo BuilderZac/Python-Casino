@@ -1,10 +1,10 @@
 import os
-import sys
+from sys import path
 
 #Config host settings here
 AdminMode = False
-DataLocation = sys.path[0] + r"\SaveData.txt"
-TmpLocation = sys.path[0] + r"\SaveDataTmp.txt"
+DataLocation = path[0] + r"\SaveData.txt"
+TmpLocation = path[0] + r"\SaveDataTmp.txt"
 #-----------------------------------------------
 
 def clear():
