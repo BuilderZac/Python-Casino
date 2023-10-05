@@ -11,9 +11,10 @@ def BlackJack(user,UserData,user_len,wincon):
                 print('Your balance is: $' + str(Balance))
                 wager = input('Enter your wager:')
 
+                deck = CasinoUtils.DeckScramble()
+                
 
 
-#PUT GAME HERE
 
 
 

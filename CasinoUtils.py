@@ -1,5 +1,6 @@
 import os
 from sys import path
+import random
 
 #Config host settings here
 AdminMode = False
@@ -39,9 +40,9 @@ def save(user_len,user,Balance,wincon):
 
 def GenDeck():
     storedDeck = []
-    suit = ["club","diamond","heart","spade"]
+    suit = ["club", "diamond", "heart", "spade"]
     for i in suit:
-        for x in range(1,14):
+        for x in range(1, 14):
             if x == 1:
                 storedDeck.append(str(i + "," + "ace"))
             elif x == 11:
@@ -52,4 +53,13 @@ def GenDeck():
                 storedDeck.append(str(i + "," + "king"))
             else:
                 storedDeck.append(str(i + "," + str(x)))
-    return(storedDeck)
+    return (storedDeck)
+
+def DeckScramble():
+    curDeck = GenDeck()
+    for i in range(3000):
+        slots = [random.randint(0, 51), random.randint(0, 51)]
+        cards = [curDeck[slots[0]], curDeck[slots[1]]]
+        curDeck[slots[0]] = cards[1]
+        curDeck[slots[1]] = cards[0]
+    return curDeck
